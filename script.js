@@ -86,9 +86,25 @@ export function aufgabe04(args) {
   const input = args
   const result = []
 
+  let count = 0
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "word") count = count + 1
+    if (currentElement === "words") count = count + 1
+  }
+
+  return count
+}
+
+linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
+
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+   { const currentElement = input[i]
+    if (currentElement === " ") count = count + 1
   }
 
   return count
