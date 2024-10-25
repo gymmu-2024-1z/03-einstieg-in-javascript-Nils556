@@ -90,7 +90,9 @@ export function aufgabe04(args) {
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === "words") count = count + 1
+    if (currentElement === " ") {
+      count = count + 1
+    }
   }
 
   return count
@@ -103,9 +105,27 @@ export function aufgabe05(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
-   { const currentElement = input[i]
-    if (currentElement === " ") count = count + 1
+    const currentElement = input[i]
+    if (currentElement >= "A" && currentElement <= "Z") {
+      return true
+    } else if (currentElement >= "a" && currentElement <= "z") {
+      return false
+    }
   }
-
-  return count
 }
+
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const upperCase = currentElement.toUpperCase()
+
+    result.push(upperCase)
+  }
+  cons
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
