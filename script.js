@@ -165,13 +165,59 @@ export function aufgabe08(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
 
-export function aufgabe(args) {
+export function aufgabe09(args) {
   const input = args
   const result = []
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
+    if (input.length < 6) {
+      return false
+    } else {
+      return true
+    }
   }
 
   return result.join("")
 }
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === "#") {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
+
+export function aufgabe11(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    //funktion die den Ascii code eines Buchstaben ermittelt
+
+    return result.join("")
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
