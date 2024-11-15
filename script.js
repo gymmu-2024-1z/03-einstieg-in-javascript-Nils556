@@ -218,6 +218,10 @@ export function aufgabe12(args) {
   const input = args
   const result = []
 
-  return result.join("")
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    return result.join("")
+  }
 }
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
