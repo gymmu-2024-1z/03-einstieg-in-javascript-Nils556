@@ -225,3 +225,28 @@ export function aufgabe12(args) {
   }
 }
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe13(args) {
+  const input = args
+  const result = []
+  const position = text.indexOf("e")
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (position !== -1) {
+      console.log(`Das erste "e" befindet sich an Position ${position}.`)
+    } else {
+      console.log('Es gibt kein "e" im Text.')
+    }
+  }
+
+  return result.join("")
+}
+
+export function aufgabe14(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
