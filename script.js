@@ -295,3 +295,47 @@ export function aufgabe16(args) {
   return result.join("")
 }
 linkupExerciseHandler('[data-click="aufgabe16"]', aufgabe16)
+
+export function aufgabe19(args) {
+  const input = args
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    result.push(currentElement)
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe019]", aufgabe019)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length - 1; i++) {
+    const currentElement = input[i]
+    const nextElement = input[i + 1]
+    if (currentElement === "." && nextElement === " ") {
+      return false
+    } else {
+      return true
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+
+  for (let i = input.length - 1; i >= 0; i--) {
+    const currentElement = input[i]
+    result.push(currentElement)
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
