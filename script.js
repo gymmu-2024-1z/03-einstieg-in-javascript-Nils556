@@ -89,17 +89,39 @@ export function aufgabe04(args) {
   const input = args
   const result = []
 
-  let count = 0
-
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === " ") {
-      // Wenn das Element ein Leerzeichen ist, wird der Zaehler um eins erhoeht. So können Wörter gezählt werden.
-      count = count + 1
+    const ascii = currentElement.charCodeAt(0)
+
+    if (ascii >= 65 && ascii <= 90) {
+      result.push(currentElement)
+    } else if (ascii >= 97 && ascii <= 122) {
+      result.push(currentElement)
+    } else if (ascii === 32) {
+      result.push(currentElement)
+    }
+  }
+  const result2 = []
+  for (let i = 0; i < result.length; i++) {
+    const currentElement = result[i]
+    const nextElement = result[i + 1]
+
+    if (currentElement === " " && nextElement === " ") {
+    } else {
+      result2.push(currentElement)
     }
   }
 
-  return count
+  let count = 0
+  for (let i = 0; i < result.length; i++) {
+    const currentElement = result2[i]
+
+    if (currentElement === " ") {
+      count++
+    }
+  }
+
+  return count + 1
 }
 
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
@@ -215,7 +237,8 @@ export function aufgabe10(args) {
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
 
-    return result.join("")
+    const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
+    return hexPattern.test(input)
   }
 }
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
@@ -296,6 +319,41 @@ export function aufgabe16(args) {
 }
 linkupExerciseHandler('[data-click="aufgabe16"]', aufgabe16)
 
+export function aufgabe17(args) {
+  const input = args
+  const totalList = []
+  const currentList = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    if (currentElement === " ") {
+      totalList.push(currentList.join(""))
+      currentList.length = 0
+    } else {
+      currentList.push(currentElement)
+    }
+  }
+  totalList.push(currentList.join(""))
+  return totalList
+}
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+
+export function aufgabe18(args) {
+  const input = args
+  const nameAndAge = aufgabe17(input)
+  const result = []
+
+  result.push("Sie heissen ")
+  result.push(nameAndAge[0])
+  result.push(" und sind ")
+  result.push(nameAndAge[1])
+  result.push(" Jahre alt")
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+
 export function aufgabe19(args) {
   const input = args
   const result = []
@@ -308,7 +366,7 @@ export function aufgabe19(args) {
 
   return result.join("")
 }
-linkupExerciseHandler("[data-click=aufgabe019]", aufgabe019)
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
 
 export function aufgabe20(args) {
   const input = args
@@ -318,12 +376,11 @@ export function aufgabe20(args) {
     const currentElement = input[i]
     const nextElement = input[i + 1]
     if (currentElement === "." && nextElement === " ") {
-      return false
     } else {
       return true
     }
   }
-  return result.join("")
+  return false
 }
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
@@ -339,3 +396,27 @@ export function aufgabe21(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+}
+
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function EigeneAufgabe01(input) {
+  const inputLength = input.length
+  const isInputLengthEven = inputLength % 2 === 0
+
+  const result = []
+  if (isInputLengthEven) {
+    result.push("Die Anzahl der Zeichen ist gerade.")
+  } else {
+    result.push("Die Anzahl der Zeichen ist ungerade.")
+  }
+
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=EigeneAufgabe01]", EigeneAufgabe01)
+
+export function EigeneAufgabe02(input) {}
