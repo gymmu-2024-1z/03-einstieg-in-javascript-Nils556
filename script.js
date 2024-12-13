@@ -506,11 +506,11 @@ export function EigeneAufgabe01(input) {
 
   const result = []
   if (isInputLengthEven) {
-    // Wenn die Anzahl der Zeichen gerade ist wird das wiedergegeben
     result.push("Die Anzahl der Zeichen ist gerade.")
+    // Wenn die Anzahl der Zeichen gerade ist wird das wiedergegeben
   } else {
-    // Wenn die Anzahl der Zeichen ungerade ist wird das wiedergegeben
     result.push("Die Anzahl der Zeichen ist ungerade.")
+    // Wenn die Anzahl der Zeichen ungerade ist wird das wiedergegeben
   }
 
   return result.join("")
