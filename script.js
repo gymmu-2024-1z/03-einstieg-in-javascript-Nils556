@@ -235,10 +235,13 @@ export function aufgabe10(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
+    // Alle Zeichen der Eingabe durchgehen
     const currentElement = input[i]
 
     const hexPattern = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/
+    // So wird geschaut ob das Zeichen ein korrekter Hexcode ist
     return hexPattern.test(input)
+    // Wenn das Zeichen ein korrekter Hexcode ist, wird true zurueckgegeben
   }
 }
 linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
@@ -248,10 +251,12 @@ export function aufgabe11(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
+    // Alle Zeichen der Eingabe durchgehen
+    const currentElement = input[i] // Das aktuelle Zeichen auswählen
 
     const asciiCode = input.charCodeAt(i)
-    result.push(asciiCode)
+    // Den Ascii Code des aktuellen Zeichens berechnen
+    result.push(asciiCode) // Den Ascii Code in das Ergebnis einfügen
   }
 }
 linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
@@ -261,6 +266,7 @@ export function aufgabe12(args) {
   const result = []
 
   for (let i = 0; i < input.length; i++) {
+    // Alle Zeichen der Eingabe durchgehen
     const currentElement = input[i]
     if (currentElement === "e") {
       return i
@@ -274,11 +280,14 @@ export function aufgabe13(args) {
   const input = args
   const result = []
   const position = text.indexOf("e")
+  // So wird geschaut ob das Zeichen "e" dabei ist
 
   for (let i = 0; i < input.length; i++) {
+    // Alle Zeichen der Eingabe durchgehen
     const currentElement = input[i]
 
     if (currentElement === "e") {
+      // Wenn das Element das Zeichen "e" ist, wird die letzte Position zurückgegeben
       return text.lastIndexOf("e")
     }
   }
@@ -295,10 +304,13 @@ export function aufgabe15(args) {
   const input = args
   const result = []
   const position = input.indexOf(" ")
+  // So wird geschaut ob das Zeichen " " dabei ist
 
   for (let i = 0; i < position; i++) {
+    // Alle Zeichen der Eingabe durchgehen
     const currentElement = input[i]
     result.push(currentElement)
+    // Das aktuelle Zeichen in das Ergebnis einfügen
   }
 
   return result.join("")
@@ -309,8 +321,10 @@ export function aufgabe16(args) {
   const input = args
   const result = []
   const position = input.indexOf("$")
+  // So wird geschaut ob das Zeichen "$" dabei ist
 
   for (let i = 0; i < position; i++) {
+    // Alle Zeichen der Eingabe durchgehen
     const currentElement = input[i]
     result.push(currentElement)
   }
@@ -358,10 +372,12 @@ export function aufgabe19(args) {
   const input = args
   const result = []
   for (let i = 0; i < input.length; i++) {
+    // Die Zeichen der Eingabe durchgehen
     const currentElement = input[i]
 
     result.push(currentElement)
     result.push(currentElement)
+    // Alle Zeichen werden zweimal gepusht, so verdoppeln sie sich
   }
 
   return result.join("")
@@ -373,11 +389,14 @@ export function aufgabe20(args) {
   const result = []
 
   for (let i = 0; i < input.length - 1; i++) {
+    // Zeichen durchgehen
     const currentElement = input[i]
     const nextElement = input[i + 1]
     if (currentElement === "." && nextElement === " ") {
+      // Wenn das aktuelle Zeichen ein Punkt ist und das nächste Zeichen ein Leerzeichen ist, wird false zurückgegeben
     } else {
       return true
+      // Wenn das aktuelle Zeichen kein Punkt ist oder das nächste Zeichen kein Leerzeichen ist, wird true zurückgegeben
     }
   }
   return false
@@ -389,8 +408,10 @@ export function aufgabe21(args) {
   const result = []
 
   for (let i = input.length - 1; i >= 0; i--) {
+    // Durch das Minus wird die Eingabe umgekehrt geschrieben wiedergegeben
     const currentElement = input[i]
     result.push(currentElement)
+    // Die Zeichen werden umgekehrt gepusht
   }
 
   return result.join("")
@@ -400,9 +421,84 @@ linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
 export function aufgabe22(args) {
   const input = args
   const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "k") {
+      // Wenn das aktuelle Zeichen das Zeichen "k" ist
+      result.push(input.slice(i))
+      // wird die restliche Eingabe in das Ergebnis gepusht
+      break
+      // Die Schleife wird beendet
+    } else {
+      // Wenn das aktuelle Zeichen das Zeichen "k" nicht ist
+      result.push("_")
+      // wird ein Unterstrich gepusht
+    }
+  }
+
+  return result.join("")
 }
 
 linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(input) {
+  const args = input
+  const result = []
+  const firstChar = input[0] // Erstes Zeichen der Eingabe
+
+  for (let i = 0; i < input.length; i++) {
+    // Alle Zeichen der Eingabe durchgehen
+    result += input[i]
+  }
+
+  result += firstChar // Erstes Zeichen am Ende hinzufügen
+
+  return result
+}
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
+
+export function aufgabe24(args) {
+  const input = args
+  const result = []
+
+  if (input.length > 1) {
+    // Wenn die Eingabe mehr als ein Zeichen hat
+    const firstChar = input[0]
+    const lastChar = input[input.length - 1]
+    // Die ersten und letzten Zeichen der Eingabe werden zuerst gespeichert
+    input = lastChar + input.slice(1, -1) + firstChar
+    // Die Eingabe wird umgedreht
+    result.push(input)
+    // Die Eingabe wird gepusht
+  } else {
+    result.push(input)
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe27(input) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (!isNaN(input) && typeof input === "number") {
+      // Wenn die Eingabe eine Zahl ist
+      result.push("Es ist eine Zahl.")
+      // Wird der Satz "Es ist eine Zahl." gepusht
+    } else {
+      // Wenn die Eingabe keine Zahl ist
+      result.push("Es ist keine Zahl.")
+      // Wird der Satz "Es ist keine Zahl." gepusht
+    }
+  }
+
+  return result.join("")
+}
 
 export function EigeneAufgabe01(input) {
   const inputLength = input.length
@@ -410,8 +506,10 @@ export function EigeneAufgabe01(input) {
 
   const result = []
   if (isInputLengthEven) {
+    // Wenn die Anzahl der Zeichen gerade ist wird das wiedergegeben
     result.push("Die Anzahl der Zeichen ist gerade.")
   } else {
+    // Wenn die Anzahl der Zeichen ungerade ist wird das wiedergegeben
     result.push("Die Anzahl der Zeichen ist ungerade.")
   }
 
@@ -419,4 +517,33 @@ export function EigeneAufgabe01(input) {
 }
 linkupExerciseHandler("[data-click=EigeneAufgabe01]", EigeneAufgabe01)
 
-export function EigeneAufgabe02(input) {}
+export function EigeneAufgabe02(args) {
+  const input = args
+  const result = []
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=EigeneAufgabe02]", EigeneAufgabe02)
+
+export function EigeneAufgabe03(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (
+      currentElement === "a" ||
+      currentElement === "e" ||
+      currentElement === "i" ||
+      currentElement === "o" ||
+      currentElement === "u"
+    ) {
+      result.push("1")
+    } else {
+      result.push("0")
+    }
+  }
+
+  return result.join("")
+}
