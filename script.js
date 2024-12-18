@@ -521,6 +521,24 @@ export function EigeneAufgabe02(args) {
   const input = args
   const result = []
 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "ja") {
+      // Wenn das Element das Wort "ja" ist
+      result.push("+")
+      // Wird + gepusht
+    } else {
+      result.push(currentElement)
+    }
+    if (currentElement === "nein") {
+      // Wenn das Element das Wort "nein" ist
+      result.push("-")
+      // Wird - gepusht
+    } else {
+      result.push(currentElement)
+    }
+  }
+
   return result.join("")
 }
 
@@ -538,10 +556,13 @@ export function EigeneAufgabe03(args) {
       currentElement === "i" ||
       currentElement === "o" ||
       currentElement === "u"
+      // So wird geschaut ob das Element ein Vokal ist
     ) {
       result.push("1")
+      // Wenn das Element ein Vokal ist, wird 1 gepusht
     } else {
       result.push("0")
+      // Wenn das Element kein Vokal ist, wird 0 gepusht
     }
   }
 
