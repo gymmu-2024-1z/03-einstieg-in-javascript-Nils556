@@ -95,9 +95,12 @@ export function aufgabe04(args) {
 
     if (ascii >= 65 && ascii <= 90) {
       result.push(currentElement)
+      // Die Großbuchstaben bleiben erhalten
     } else if (ascii >= 97 && ascii <= 122) {
+      // Die Kleinbuchstaben bleiben erhalten
       result.push(currentElement)
     } else if (ascii === 32) {
+      // Die Leerzeichen bleiben erhalten
       result.push(currentElement)
     }
   }
@@ -107,17 +110,22 @@ export function aufgabe04(args) {
     const nextElement = result[i + 1]
 
     if (currentElement === " " && nextElement === " ") {
+      // Wenn das Element ein Leerzeichen ist und das nächste Element auch ein Leerzeichen ist, wird das Leerzeichen ignoriert
     } else {
       result2.push(currentElement)
+      // Die anderen Zeichen bleiben
     }
   }
 
   let count = 0
+  // Die Anzahl der Leerzeichen berechnen
   for (let i = 0; i < result.length; i++) {
     const currentElement = result2[i]
 
     if (currentElement === " ") {
+      // Wenn das Element ein Leerzeichen ist
       count++
+      // Die Anzahl der Leerzeichen wird um eins erhöht
     }
   }
 
@@ -342,9 +350,11 @@ export function aufgabe17(args) {
     const currentElement = input[i]
 
     if (currentElement === " ") {
+      // Wenn ein Leerzeichen kommt, wird das Wort zur Liste hinzugefügt
       totalList.push(currentList.join(""))
-      currentList.length = 0
+      currentList.length = 0 // Die Liste wird zurükgesetzt fürs nächste Wort
     } else {
+      // Wenn kein Leerzeichen kommt, wird das Zeichen zur Liste hinzugefügt
       currentList.push(currentElement)
     }
   }
@@ -356,6 +366,7 @@ linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 export function aufgabe18(args) {
   const input = args
   const nameAndAge = aufgabe17(input)
+  // Die Funktion aus Aufgabe 17 wird aufgerufen
   const result = []
 
   result.push("Sie heissen ")
@@ -363,6 +374,7 @@ export function aufgabe18(args) {
   result.push(" und sind ")
   result.push(nameAndAge[1])
   result.push(" Jahre alt")
+  // Die Zeichen werden gepusht
 
   return result.join("")
 }
@@ -479,6 +491,35 @@ export function aufgabe24(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe24]", aufgabe24)
+
+export function aufgabe25(args) {
+  const input = args
+  const result = []
+
+  const inputLength = input.length
+  const middleIndex = Math.floor(inputLength / 2)
+
+  if (inputLength % 2 === 0) {
+    // Wenn die Anzahl der Zeichen gerade ist
+    result.push(input.slice(0, middleIndex - 1))
+    result.push(input.slice(middleIndex + 1))
+    // Die beiden mittleren Zeichen werden gelöscht
+  } else {
+    // Wenn die Anzahl der Zeichen ungerade ist
+    result.push(input.slice(0, middleIndex))
+    result.push(input.slice(middleIndex + 1))
+    // Das mittlere Zeichen wird gelöscht
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe25]", aufgabe25)
+
+export function aufgabe26(args) {
+  const input = args
+  const result = []
+}
 
 export function aufgabe27(input) {
   const input = args
